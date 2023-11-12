@@ -16,15 +16,23 @@ export default function App() {
   return (
     <>
       <StatusBar style="light" />
-      <NavigationContainer>
+      <NavigationContainer
+        theme={{
+          dark: true,
+          colors: {
+            primary: "#000",
+            background: "#000",
+            card: "#000",
+            text: "white",
+            border: "white",
+            notification: "white",
+          },
+        }}
+      >
         <Stack.Navigator
           screenOptions={{
             animation: "slide_from_right",
             animationDuration: 300,
-            headerTintColor: "white",
-            headerStyle: {
-              backgroundColor: "black",
-            },
           }}
         >
           <Stack.Screen name="Categories" component={Categories} />
