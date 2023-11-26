@@ -7,7 +7,7 @@ import Meals from "./screens/Meals";
 
 export type RootStackParamList = {
   Categories: undefined;
-  Meals: undefined;
+  Meals: { categoryId: string };
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();

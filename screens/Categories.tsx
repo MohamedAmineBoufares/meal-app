@@ -9,11 +9,13 @@ import { RootStackParamList } from "../App";
 type Props = NativeStackScreenProps<RootStackParamList, "Categories">;
 
 function Categories({ navigation }: Props) {
-  const handleNavigate = () => {
-    navigation.navigate("Meals");
-  };
-
   const renderCategory: ListRenderItem<Category> = ({ item: category }) => {
+    const handleNavigate = () => {
+      navigation.navigate("Meals", {
+        categoryId: category.id,
+      });
+    };
+
     return <CategoryGridTitle {...category} onPress={handleNavigate} />;
   };
 
